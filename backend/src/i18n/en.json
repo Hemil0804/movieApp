@@ -15,5 +15,6 @@
 	"validationTitleRequired": "Movie Title should not be empty",
 	"validationYearBase": "Publishing year should not be empty",
 	"validationPasswordRequired": "Password should not be empty",
-	"validationPasswordMin": "Password should contain at least 4 characters."
+	"validationPasswordMin": "Password should contain at least 4 characters.",
+	"TokenNotFound": "TokenNotFound"
 }
