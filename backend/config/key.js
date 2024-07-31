@@ -1,0 +1,23 @@
+require("dotenv").config();
+module.exports = {
+    PORT: process.env.LOCALPORT || 4000,
+    APP_URL: "http://localhost:4000",
+    JWT_AUTH_TOKEN_SECRET: "TbOxdI8/sn057Wf8bzLFsPLx+pWOu0tMckFz+rYnVk6/bRjDHI4pOjL51oqkI5d2HmfCot1HZTgnCltxBrfdE36gssIoD/RzEnyXjzkLvp5bLMAEEI8ucWqkZTpF7jBMB+l/lqSVVBhvZuUKcOKDna/Ni6qIRZYe5adDmmBjF4Rv9P6Nz6wb++AtCvX/TF15rP46ceYpXI66Xv7L0ZrjqrquIHH4ePY3SxguopeqSepXDD1+PckfvPyLC5PyBKzGVlGSYC/Qyl2TeWmxFox1YDcMGB4QZse2NTsRMPH4oQT1Kac7gNmEPwpbPz9KEWYo227qTUploME2tVSYudoDwA==",
+    JWT_EXPIRES_IN: "24h",
+    DB_AUTH_URL: "mongodb+srv://hemilmultiqos:hGsLT0IpOUZp1l3x@cluster0.ufvhgfo.mongodb.net/movieApp",
+    RESET_TOKEN_EXPIRES:"20m",
+    ADMIN: 2,
+    USER: 1,
+    PAGINATION_LIMIT: 10,
+    SERVERERROR: 500,
+    FAILURE: 400,
+    UNAUTHORIZED: 401,
+    SUCCESS: 200,
+    MAINTANANCE: 503,
+    ACTIVE_STATUS: 1,
+    INACTIVE_STATUS: 2,
+    DELETED_STATUS: 3,
+    UNVERIFIED_STATUS: 4,
+    META_STATUS_0: 0,
+    META_STATUS_1: 1,
+}
