@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({path:"../.env"});
 console.log(process.env.DB_AUTH_URL,'DB_AUTH_URL')
 module.exports = {
     PORT: 4000,
