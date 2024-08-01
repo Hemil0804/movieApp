@@ -24,17 +24,14 @@ const authentication = createSlice({
         signInRequest: (state) => {
             state.isloading = true;
         },
-        signInSuccess: (state, action) => {
-            if (action.payload?.data?.isVerified) {
-                const userType = action.payload.data.userType;
+        signInSuccess: (state, action) => {  
                 const authToken = action.payload.meta.token;
                 const userData = JSON.stringify(action.payload);
-                localStorage.setItem('userDataMovieApp', userData);
-                setCookie('userDataMovieApp', userData, { path: '/' });
-                setCookie('authTokenMovieApp', authToken, { path: '/' });
-                setCookie('userTypeMovieApp', userType, { path: '/' });
+                setCookie('userData', userData);
+                setCookie('tokenData', authToken);
+                localStorage.setItem('tokenData', userData);
                 localStorage.setItem('isLogin', 'true');
-            }
+        
             state.isloading = false;
             state.userData = action.payload;
         },
@@ -63,13 +60,8 @@ const authentication = createSlice({
             state.isloading = true;
         },
         logOutUserSuccess: (state) => {
-            deleteCookie('userDataMovieApp', { path: '/' });
-            deleteCookie('authTokenMovieApp', { path: '/' });
-            deleteCookie('userTypeMovieApp', { path: '/' });
-            deleteCookie('languageSSM', { path: '/' });
-            deleteCookie('currentPageSSM', { path: '/' });
-
-            localStorage.removeItem('userDataMovieApp');
+            deleteCookie('tokenData', { path: '/' });
+            localStorage.removeItem('tokenData');
             localStorage.removeItem('isLogin');
 
             state.isloading = false;

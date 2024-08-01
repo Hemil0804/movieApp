@@ -18,7 +18,7 @@ requestApi.interceptors.request.use((req) => {
         return cookieValue ? cookieValue.pop() : '';
     }
     // Get the value of the 'authToken' cookie
-    const authToken = getCookie('authTokenSSM') || ''
+    const authToken = getCookie('tokenData') || ''
     const getLanguage = getCookie('languageSSM') || 'it'
     // console.log(getLanguage ? getLanguage : "en","77777777777777");
     // console.log(authToken,'//////////');
@@ -87,9 +87,8 @@ requestApi.interceptors.response.use(
     async (error) => {
         if (error?.response?.status === 401) {
             localStorage.removeItem('userData')
-            document.cookie = 'authTokenSSM=; expires=Thu, 01 Jan 1970 00:00:00 GMT ; path=/;';
-            document.cookie = 'userTypeSSM=; expires=Thu, 01 Jan 1970 00:00:00 GMT ; path=/;';
-            localStorage.removeItem('authTokenSSM')
+            document.cookie = 'tokenData=; expires=Thu, 01 Jan 1970 00:00:00 GMT ; path=/;';
+            localStorage.removeItem('tokenData')
             await Swal.fire({
                 position: 'center',
                 icon: 'error',
@@ -135,9 +134,9 @@ requestApi.interceptors.response.use(
             } else {
                 if (error?.response?.status === 403) {
                     localStorage.removeItem('userData')
-                    document.cookie = 'authTokenSSM=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+                    document.cookie = 'tokenData=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
                     document.cookie = 'userTypeSSM=; expires=Thu, 01 Jan 1970 00:00:00 GMT ; path=/;';
-                    localStorage.removeItem('authTokenSSM')
+                    localStorage.removeItem('tokenData')
                     window.location.reload()
                     return true
                 }

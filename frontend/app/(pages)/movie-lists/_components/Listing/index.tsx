@@ -23,12 +23,11 @@ const Listing = () => {
   const { movieList, loading } = useSelector((state: RootState) => state.MovieListSlice);
 
   useEffect(() => {
-    dispatch(asyncMovieListCollection());
-  }, [dispatch]);
+       dispatch(asyncMovieListCollection());
+  }, []);
 
   console.log(movieList,"movieList");
   
-
   return (
     <>
       <div className="movies-wrapper pb-120">

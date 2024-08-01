@@ -10,7 +10,6 @@ import {
 } from '../slices/MovieListSlice';
 import { Dispatch } from 'redux';
 
-// Define specific types for payload and API responses
 interface Payload {
     [key: string]: any;
 }
