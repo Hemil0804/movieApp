@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
                 status: foundUser.status
             }
 
-            let tokenData = await jwt.sign({ tokenObject }, JWT_AUTH_TOKEN_SECRET, { expiresIn: JWT_EXPIRES_IN });
+            let tokenData = await jwt.sign({ tokenObject }, JWT_AUTH_TOKEN_SECRET, { expiresIn: '24h' });
             let checkDeviceToken = await jwtTokenModel.aggregate([
                 {
                     $match: {

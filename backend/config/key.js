@@ -1,11 +1,12 @@
 require("dotenv").config();
+console.log(process.env.DB_AUTH_URL,'DB_AUTH_URL')
 module.exports = {
-    PORT: process.env.LOCALPORT || 4000,
-    APP_URL: "http://localhost:4000",
-    JWT_AUTH_TOKEN_SECRET: "TbOxdI8/sn057Wf8bzLFsPLx+pWOu0tMckFz+rYnVk6/bRjDHI4pOjL51oqkI5d2HmfCot1HZTgnCltxBrfdE36gssIoD/RzEnyXjzkLvp5bLMAEEI8ucWqkZTpF7jBMB+l/lqSVVBhvZuUKcOKDna/Ni6qIRZYe5adDmmBjF4Rv9P6Nz6wb++AtCvX/TF15rP46ceYpXI66Xv7L0ZrjqrquIHH4ePY3SxguopeqSepXDD1+PckfvPyLC5PyBKzGVlGSYC/Qyl2TeWmxFox1YDcMGB4QZse2NTsRMPH4oQT1Kac7gNmEPwpbPz9KEWYo227qTUploME2tVSYudoDwA==",
-    JWT_EXPIRES_IN: "24h",
-    DB_AUTH_URL: "mongodb+srv://hemilmultiqos:hGsLT0IpOUZp1l3x@cluster0.ufvhgfo.mongodb.net/movieApp",
-    RESET_TOKEN_EXPIRES:"20m",
+    PORT: 4000,
+    APP_URL: process.env.APP_URL,
+    JWT_AUTH_TOKEN_SECRET: process.env.JWT_AUTH_TOKEN_SECRET,
+    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
+    DB_AUTH_URL: process.env.DB_AUTH_URL,
+    RESET_TOKEN_EXPIRES:process.env.RESET_TOKEN_EXPIRES,
     ADMIN: 2,
     USER: 1,
     PAGINATION_LIMIT: 10,
